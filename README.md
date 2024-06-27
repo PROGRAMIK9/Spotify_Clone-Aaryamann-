@@ -6,3 +6,4 @@ The parts reamining, that i want to finish in the enar future are:
 2)search
 3)Add Playlists
 4)Volume managment
+5) make it responsive to various devices
