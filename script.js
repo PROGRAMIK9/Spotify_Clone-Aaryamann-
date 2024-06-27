@@ -2,7 +2,7 @@
 let currentsong = new Audio()
 //function to get songs from server/file
 async function getsongs(){
-    let lists = await fetch('/songs');
+    let lists = await fetch('/songs/');
     let response = await lists.text();
     let div=document.createElement('div');
     div.innerHTML=response;
