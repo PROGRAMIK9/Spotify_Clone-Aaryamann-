@@ -1,23 +1,23 @@
 //the song to be played stored in this variable
 let currentsong = new Audio()
+let songs =[]
+let thumb=[]
 //function to get songs from server/file
 async function getsongs(){
-    let lists = await fetch('/songs/');
+    let lists = await fetch('/songs');
     let response = await lists.text();
     let div=document.createElement('div');
     div.innerHTML=response;
     let as = div.getElementsByTagName('a');    
-    songs = []
     //add only those files that are mp3
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
             songs.push(element)
         }
-    }
-    return songs
-   
+    }   
 }
+
 
 //function to get the cover images from server/file
 async function getThumbnails(){
@@ -27,7 +27,6 @@ async function getThumbnails(){
     let div=document.createElement('div');
     div.innerHTML=response;
     let as = div.getElementsByTagName('a');
-    thumb = []
     //add only jpeg files
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
@@ -35,13 +34,10 @@ async function getThumbnails(){
             thumb.push(element)
         }
     }
-    return thumb
 }
 
 //function to play the songs 
 async function playsong(songName){
-    let songs=await getsongs()
-    let images = await getThumbnails()
     let play=document.getElementById('play');
     for (let index = 0; index < songs.length; index++) {
         const element = songs[index];
@@ -52,7 +48,7 @@ async function playsong(songName){
             currentsong.play()
             //setting the player at the bottom to show the name and thumbnail 
             document.querySelector(".songname").innerHTML=songName.replace('.mp3','')
-            document.querySelector('.songinfo').querySelector('img').src=images[index].href
+            document.querySelector('.songinfo').querySelector('img').src=thumb[index].href
         }
     }
 }
@@ -70,8 +66,8 @@ function convertSecondsToMinutes(seconds) {
     return `${minutes}:${formattedSeconds}`;
 }
 async function main(){
-    let songs= await getsongs()
-    let images = await getThumbnails()
+    await getsongs();
+    await getThumbnails();
     let play=document.getElementById('play');
     let list= document.getElementsByClassName('list')
     let card= document.getElementsByClassName('card')
@@ -81,14 +77,14 @@ async function main(){
         songinfo=songs[index].innerText.replace('.mp3','').split('-')
         list[index].querySelector('.song').innerHTML=songinfo[0];
         list[index].querySelector('.artist').innerHTML=songinfo[1];
-        list[index].querySelector('img').src=images[index].href
+        list[index].querySelector('img').src=thumb[index].href
     }
    //setting Spotify playlist cards
     for (let index = 0; index < card.length; index++) {
         songinfo=songs[index].innerText.replace('.mp3','').split('-')
         card[index].querySelector('h3').innerHTML=songinfo[0];
         card[index].querySelector('p').innerHTML=songinfo[1];
-        card[index].querySelector('img').src=images[index].href
+        card[index].querySelector('img').src=thumb[index].href
     }
     //time at bottom
     document.querySelector(".songstart").innerHTML="-\--"
@@ -188,6 +184,44 @@ async function main(){
         let time = e.offsetX/e.target.getBoundingClientRect().width
         document.getElementById('circle').style.left = time*100+"%";
         currentsong.currentTime=currentsong.duration*time
+    })
+    document.querySelector('.volume').addEventListener('click',(e)=>{
+        vol = document.getElementById('speaker')
+        let left = e.offsetX/e.target.getBoundingClientRect().width*100
+        document.querySelector('#volume').style.left=left+"%"
+        console.log(left/100)
+        if(left>=70 && left <= 100){
+            vol.src = "volume.svg"
+        }
+        if(left < 70 && left > 30){
+            vol.src = "speaker.svg"
+        }
+        if(left <= 30 && left > 0){
+            vol.src = "low.svg"
+        }
+        if(left==0){
+            vol.src="mute.svg"
+        }
+        currentsong.volume = left/100
+    })
+    document.querySelector('#speaker').addEventListener('click',()=>{
+        vol = document.getElementById('speaker')
+        if(currentsong.volume>0){
+            currentsong.volume =0
+            vol.src="mute.svg"
+             document.querySelector('#volume').style.left="0%"
+        }
+        else{
+            currentsong.volume=1
+            vol.src="volume.svg"
+            document.querySelector('#volume').style.left="100%"
+        }
+    })
+    document.querySelector('.menu').addEventListener('click',()=>{
+        document.querySelector('.left').style.left = 0
+    })
+    document.querySelector('.collapse').addEventListener('click',()=>{
+        document.querySelector('.left').style.left = "-125%";
     })
 }
 //call the main function to execute
