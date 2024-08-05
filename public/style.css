@@ -1,0 +1,840 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    overflow:hidden;
+    max-width:100%;
+    background: black;
+    color:white;
+    max-width:100vw;
+    max-height: 100vh;
+}
+
+.container{
+    max-width:100vw;
+    max-height: 100vh;
+    display:flex;
+    justify-content:left;
+    align-items: center;
+}
+.left{
+    box-sizing: border-box;
+    position: relative;
+    height:85vh;
+    width: 25vw;
+    margin-top: 1%;
+    margin-left:10px;
+    overflow:none;   
+}
+.top{
+    box-sizing: border-box;
+    background-color:#121212;
+    height:20vh;
+    width:98%;
+    border-radius:15px;
+    overflow:none;
+    padding-top: 10px;
+    padding-left:20px;
+    font-weight: bold;
+}
+.bot{
+    position: absolute;
+    box-sizing: border-box;
+    margin-top:5px;
+    height:65vh;
+    width:98%;
+    border-radius:15px;
+    background-color:#121212;
+    overflow:none;
+}
+.bottom{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.right{
+    position: relative;
+    margin-top:1%;
+    margin-left:0;
+    width:73vw;
+    box-sizing: border-box;
+    height:86vh;
+    border-radius:15px;
+    background: #121212;
+}
+
+.right:hover{
+    scroll-behavior: smooth;
+}
+.dDJltW{
+    margin-top:2.5%;
+    margin-left:2.5%;
+    fill:white;
+    stroke:transparent;
+}
+
+.top ul li{
+    list-style: none;
+    margin-left:2.5%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.home a{
+    margin-top: 4%;
+    color:white;
+    display: flex;
+    align-items:center;
+}
+
+.home span{
+    margin-top:2%;
+    margin-left:4%;
+}
+.search a{
+    color:rgb(86,86,83);
+    margin-top: 5%;
+    display: flex;
+    align-items:center;
+}
+
+.search span{
+    margin-left:3.5%;
+}
+
+.search a:hover{
+    color:white; 
+    transition: .5s;  
+}
+
+.home a:active,.search a:active{
+    text-decoration:underline;
+}
+.search:hover .svsearch{
+    fill: white!important;
+    transition: .5s;
+}
+
+.library{
+    display:flex;
+    width:50%;
+    justify-content: left;
+    align-items:center;
+    padding-top: 10px;
+    padding-left:25px;
+    font-weight: bold;
+}
+.library span{
+    color:rgb(86,83,83);
+    margin-left:4%;
+
+}
+
+.library:hover span{
+    color:white;
+    transition: .5s;
+}
+
+.library:hover .lib{
+    fill: white!important;
+    transition: .5s;
+}
+
+.library:active{
+    text-decoration: underline white;
+}
+.plusb{
+    background-color: transparent;
+    border: none;
+    margin-right:4%;
+}
+
+.plus:hover{
+    fill: white!important;
+    transition: .5s;
+}
+
+.topbar{
+    margin-top:2%;
+    position: relative;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    box-sizing:border-box;
+    width:100%;
+    height:5vh;
+    border-radius:10px 10px 0 0;
+    background-color: #121212;
+    padding:16px;
+}
+
+#left{
+    margin-left: 20px;
+}
+.butleft{
+    height: 30px;
+    width:30px;
+    border:none;
+    padding:5%;
+    overflow:hidden;
+    border-radius:50%;
+    background-color: black;
+    cursor:not-allowed;
+}
+
+.log{
+    flex-flow:nowrap;
+    margin-right:15px;
+    gap:20px;
+}
+
+#signin{
+    height:50px;
+    width:80px;
+    color:rgb(86,83,83);
+    background-color: transparent;
+    border: none;
+    font-size: medium;
+    font-weight:bold;
+    margin-right:10px;
+    transition: .25s ease-in;
+}
+
+#signin:hover{
+    color:white;
+}
+
+#login{
+    color:black;
+    background-color: white;
+    border:none;
+    overflow:hidden;
+    height:45px;
+    width: 120px;
+    border-radius: 20%/50%;
+    font-size:medium;
+    font-weight:600;
+}
+
+#login:hover{
+    font-weight:800;
+    height:50px;
+}
+
+.content{
+    box-sizing: border-box;
+    background-color: #121212;
+    margin-top:1.5%;
+    margin-left:2%;
+}
+
+
+.cardContainer{
+    margin-top:10px;
+    display:flex;
+    gap:25px;
+    position: absolute;
+    flex-wrap:wrap;
+    height:500px;
+    width:100%;
+    overflow: auto;
+}
+.card{
+    position: relative;
+    padding:10px;
+    width:10vw;
+    overflow: hidden;
+    border-radius:10px;
+    height:220px;
+}
+
+.scroll{
+    position: absolute;
+    background-color: #121212;
+    width:20px;
+    top:0;
+    right:0;
+    height:86vh;
+    border-radius:15px;
+}
+.card>*{
+    padding-top:5px;
+}
+.card img{
+    width:100%;
+    object-fit:contain;
+    border-radius:10px;
+}
+a{
+    text-decoration: none;
+    color:white;
+}
+.card:hover{
+    background-color:#252525;
+}
+
+.card:hover .playbut{
+    display: flex;
+}
+.card p{
+    font-size:small;
+    color:rgb(86,83,83)
+}
+
+.play{
+    fill:black;
+}
+
+.playbut{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    background-color: #1DB954;
+    border-radius: 50%;
+    padding:5%;
+    height:25px;
+    width:25px;
+    top:130px;
+    right:20px;
+    display: none;
+}
+
+.topContent{
+    display: flex;
+    align-items: center;
+    gap:75%;
+}
+
+.show{
+    color:rgb(86,83,83);
+}
+
+.show:hover{
+    color:white;
+    text-decoration: underline rgb(86,83,83);
+}
+
+.footer{
+    position: absolute;
+    left:15px;
+    bottom:0px;
+    font-size:12px;
+    width:100%;
+}
+
+.line{
+    display: block;
+    background-color: rgb(86,83,83);
+    width:96%;
+    height:2px;
+}
+
+.socials{
+    position: relative;
+    margin-left:2%;
+    width:100%;
+}
+
+.heading{
+    position: relative;
+    width:100%;
+    display:flex;
+    align-items: center;
+    gap:76px;
+}
+
+.heading li{
+    list-style: none;
+}
+
+.logos{
+    position: relative;
+    display: flex;
+    margin-left:50px;
+    gap:15px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    width:35px;
+    height:37px;
+    background-color: rgb(41,41,41);
+    border-radius: 50%;
+    color:white;
+    padding: 5%;
+}
+
+.logo:hover{
+    background-color: rgb(141,141,141);
+}
+
+li{
+    list-style: none;
+}
+.body{
+    display: flex;
+    
+}
+
+.com{
+    width:150px;
+}
+.com a{
+    color:rgb(86,83,83);
+    font-weight: 450;
+    line-height: 1.75
+}
+
+.com a:hover{
+    text-decoration: underline;
+    color:rgb(227, 215, 215);   
+}
+
+.play{
+    margin-left: 5%;
+    margin-top: 2%;
+    display: flex;
+    gap:10px;
+}
+
+.plays{
+    width:80px;
+    height:30px;
+    font-size: medium;
+    font-weight: 600;
+    padding:1%;
+    border-radius: 25px 25px 25px 25px;
+    border:none;
+    background-color: #252525;
+    color:white
+}
+
+.plays:hover{
+    background-color: rgb(86,83,83);
+}
+
+.playlist{
+    overflow: auto;
+    position: relative;
+    height:80%;
+    width:400px;
+    margin-top:1%;
+    margin-left: 1%;
+}
+
+
+.play::before{
+    content:"";
+}
+.list{
+    font-weight: 600;
+    display:flex;
+    align-items: center;
+    gap:30px;
+    height:75px;
+    width:350px;
+    position: relative;
+    padding:10px;
+    overflow: hidden;
+    border-radius: 15px;;
+}
+
+.list img{
+    width:15%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.list:hover{
+    background-color: #252525;
+}
+
+.playbar{
+    position: absolute;
+    bottom:0;
+    border-radius:15px;
+    background-color: black;
+    width:100%;
+    height:10vh;
+    padding:5px;
+}
+
+.playbuttons{
+    display:flex;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+    gap:15px;
+}
+
+
+.playbut1{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    background-color: #1DB954;
+    border-radius: 50%;
+    padding:5%;
+    height:15px;
+    width:15px;
+    top:25px;
+    right:20px;
+    display: none;
+}
+
+.list:hover .playbut1{
+    display: flex;
+}
+
+.songtime{
+    color:white;
+    width:50%;
+    font-size:large;
+    position: absolute;
+    bottom:0;
+    left:25%;
+}
+
+.songend{
+    position: absolute;
+    left:95%;
+    top:-1px;
+}
+.seekbar{
+    height:3px;
+    width:50%;
+    background-color: white;
+    position: absolute;
+    top:60%;
+    left:25%;
+    cursor:pointer;
+}
+
+.circle{
+    position: relative;
+    border-radius: 50%;
+    background-color: white;
+    width:10px;
+    height:10px;
+    left: 0%;
+    top:-3px;
+    transition:left .5s;
+}
+
+.playbuttons img{
+    cursor:pointer;
+}
+
+.cursornone{
+    cursor:none;
+}
+
+.songinfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width:250px;
+    height: 100%;
+}
+
+.songinfo img{
+    width:25%;
+    left:19px;
+    position: absolute
+}
+
+.songname{
+    position: absolute;
+    left:100px;
+}
+
+
+.volume{
+    height:3px;
+    width:70%;
+    background-color: white;
+    position: relative;
+    top:10px;
+    left:5px;
+    cursor:pointer;
+}
+.hold svg{
+    cursor: pointer;
+}
+.hold{
+    position: absolute;
+    top:35%;
+    right:3%;
+    display: flex;
+    width:15%;
+    height:30%;
+}
+#volume{
+    position: relative;
+    left:100%;
+}
+.menu{
+    display: none;
+}
+.collapse{
+    display: none;
+}
+.signpage, .logpage{
+    position: absolute;
+    height:275px;
+    width:300px;
+    top:30%;
+    left:45%;
+    background-color: #252525;
+    border-radius: 25px;
+    margin: 20px;
+    padding: 10px;
+    z-index:40;
+    box-sizing: border-box;
+    display: none;
+}
+.signpage{
+    top:20%;
+    height:400px;
+}
+.display{
+    display: inherit!important;;
+}
+.signpage h1,.logpage h1{
+    display: flex;
+    justify-content: center;
+    margin-left: 15%;
+}
+label[for="email"],[for="pass"],[for="confirm"],[for='username'],[for='user']{
+    display: flex;
+    justify-content: center;
+    margin-top:20px ;
+    margin-left: 15%;
+}
+input[type="email"],[type="password"],[type="text"]{
+    background-color: transparent;
+    color:white;
+    border: none;
+    height:20px;
+    text-align: center;
+    border-bottom: 3px solid white;
+    width:80%;
+    margin-left: 15%;
+    outline: none;
+}
+#logtospotify,#signtospotify{
+    color:black;
+    background-color: #1DB954;
+    border:none;
+    margin-top:30px;
+    margin-left:40%;
+    height:30px;
+    width:80px;
+    border-radius:10px;
+    margin-bottom: 15px;
+}
+#signtospotify:hover, #logtospotify:hover{
+    color:green;
+    background-color: white;
+}
+.blur{
+    filter:blur(4px);
+    pointer-events: none;
+}
+.logpage h4,.signpage h4{
+    text-align: center; 
+    margin-left:30px;
+}
+.display a{
+    color:green;
+}
+.show{
+    display: none!important;
+}
+#profile{
+    height:50px;
+    width:50px;
+    border-radius:50%;
+    display: none;
+}
+.user-info{
+    height:80px;
+    width:150px;
+    position: absolute;
+    right:10px;
+    z-index: 10;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: right;
+    top:50px;
+    background-color: #252525;
+}
+ul li{
+    margin-top:5px;
+}
+.log:hover .user-info{
+    display: block!important;
+    color:green
+}
+@media (max-width:426px) and (min-width:320px) {
+        .left .top{
+            height:135px;
+            border-bottom-right-radius: 0;
+            margin-left: 0;
+            padding: 3px;
+        }
+        .top .collapse{
+            margin: 0;
+            padding:5px;
+        }
+        .bottom{
+            display: none;
+        }
+        .collpase img{
+            height:20px;
+            width:20px;
+        }
+        .left{
+            position: absolute;
+            width:95vw;
+            height:90vh;
+            left:-125%;
+            z-index: 50;
+            top:0;
+            margin-top:0;
+        }
+        #spot{
+            display: none;
+        }
+        .bot{
+            border-top-right-radius: 0;
+            height:60vh;
+            margin-top: 0;
+        }
+        #signin{
+            display: none;
+        }
+        .playlist{
+            height:53vh;
+        }
+        .right{
+            left: 3px;
+            margin: 0;
+            width:100%;
+            position: absolute;
+            top:3px;
+            height:85vh;
+        }
+        .play{
+            margin-left:0;
+            gap:3.5px;
+            
+        }
+        .plays{
+            font-size: 12px;
+            width:75px;
+            margin-top: 0;
+        }
+        .bot .list{
+            width: 275px;
+        }
+        .seekbar{
+            top:95%;
+            width:90%;
+            left:5%;
+        }
+        .songtime{
+            display: none;
+        }
+        .playbar{
+            height:8vh;
+            position: absolute;
+            bottom:5px;
+        }
+        .songname{
+            position: absolute;
+            width:45%;
+            font-size:11px;
+        }
+        .hold{
+            display: none;
+        }
+        .songinfo{
+            height:100%;
+            width:200px;
+            position: absolute;
+            bottom:15%;
+        }
+        .socials{
+            display: none;
+        }
+        .cardContainer{
+            width:100%;
+            gap:10px;
+        }
+        .card{
+            width:85px;
+            height: 150px;
+            margin:0;
+        }
+        .card h3{
+            font-size:16px;
+        }
+
+        .topContent{
+            gap:10%;
+        }
+        .buttons{
+            display: none;
+        }
+        .menu{
+            display: block;
+            width:30px;
+            height:40px;
+        }
+        .log{
+            margin-left: 60px;
+        }
+        #login{
+            height:30px;
+            width:80px;
+        }
+        #login:hover{
+            height:35px;
+        }
+        .menu img{
+            width:100%;
+            height:100%;
+        }
+        .collapse{
+            display: block;
+            width:30px;
+            height:40px;
+            margin-left: 20px;
+            margin-top:5px;
+        }
+        .collapse img{
+            width:100%;
+            height:100%;
+        }
+        .footer{
+            display: none;
+        }
+        #prev,#next,#play{
+            z-index:15;
+        }
+        .playbuttons{
+            margin-left: 200px;
+        }
+        .signpage{
+            width:100%;
+            height:100vh;
+        }
+        
+}
